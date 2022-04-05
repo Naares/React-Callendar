@@ -1,0 +1,14 @@
+.callendar-item{
+    width: 100px;
+    height: 100px;
+    transition-property: width,height;
+    transition-delay: 200ms;
+    transition:  width 700ms,height 700ms;
+    z-index: 1;
+}
+
+.callendar-item:hover{
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+}
