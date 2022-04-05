@@ -5,11 +5,14 @@ import './App.css';
 import { Container } from 'react-bootstrap';
 import { Header } from './components/Header';
 import { EMessageSeverity, Message } from './components/Message';
+import { Callendar } from './components/Callendar';
 
 function App() {
   return (
     <div className="container-fluid">
-      <Message message='helloworld' messageSeverity={EMessageSeverity.Info} />
+      <React.Fragment>
+        <Callendar />
+      </React.Fragment>
     </div>
   );
 }
