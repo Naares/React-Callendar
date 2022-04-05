@@ -1,4 +1,3 @@
-import { throws } from "assert";
 import React from "react";
 import { Days, IDays } from "./Days";
 
@@ -34,9 +33,11 @@ export class Callendar extends React.Component<ICallendarProps,ICallendarState>{
 
     render(): React.ReactNode {
         return(
-            <div className="callendar">
-                {this.state.days.map((val) =>{
-                    return <Days key={val.dayNbr} dayNbr={val.dayNbr} dayEvents={val.dayEvents} />
+            <div className="callendar containter">
+                {this.state.days.map((val : IDays) =>{
+                    return val.dayNbr === 0 || val.dayNbr === 10 || val.dayNbr === 20 || val.dayNbr === 30 ? 
+                    <React.Fragment><div className="row"></div><Days key={val.dayNbr} dayNbr={val.dayNbr} dayEvents={val.dayEvents} /></React.Fragment> :
+                    <Days key={val.dayNbr} dayNbr={val.dayNbr} dayEvents={val.dayEvents} />
                 })}
             </div>
         );
